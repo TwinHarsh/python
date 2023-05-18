@@ -61,6 +61,7 @@ if(log):
         print(addqty[i],end="\t")
         print(addrate[i],end="\n")
     print("*********** add to cart ************")
+
     rm=input(" product  remove 'yes'")
     if rm =='yes':
         p=input("enter product name")
@@ -70,13 +71,33 @@ if(log):
                 addqty.pop(i)
                 addrate.pop(i)
                 break
-    totalpay=0
-    
     for i in range(len(addproduct)):
         print(addproduct[i],end="\t")
         print(addqty[i],end="\t")
         print(addrate[i],end="\n")
-        totalpay+=addqty[i]*addrate[i];
+
+    totalpay=0
+    while True:
+        w=input("yes to change quantity:")  
+        if(w == 'yes'):
+                pr=input("enter product name")
+                for i in range(len(addproduct)):
+                    if(pr==addproduct[i]):
+                        pos=i
+                        find=True
+                        break
+                if find:
+                    qt= int(input("enter qty"))
+                    if(qt<=qty[pos]):
+                        addqty[pos]=qt
+        else:
+            break
+
+    for i in range(len(addproduct)):
+        print(addproduct[i],end="\t")
+        print(addqty[i],end="\t")
+        print(addrate[i],end="\n")
+        totalpay+=addqty[i]*addrate[i]
     print("Total pay",totalpay)
     pay =int(input("enter pay"))
     if(pay==totalpay):
