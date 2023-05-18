@@ -71,6 +71,7 @@ if(log):
                 addrate.pop(i)
                 break
     totalpay=0
+    
     for i in range(len(addproduct)):
         print(addproduct[i],end="\t")
         print(addqty[i],end="\t")
