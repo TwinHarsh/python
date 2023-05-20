@@ -52,7 +52,7 @@ if(log):
                     addrate.append(rate[p_pos])
 
                 else:
-                    print("not") 
+                    print("limit reached") 
         else:
             break
     print("*********** add to cart ************")
@@ -62,15 +62,19 @@ if(log):
         print(addrate[i],end="\n")
     print("*********** add to cart ************")
 
-    rm=input(" product  remove 'yes'")
-    if rm =='yes':
-        p=input("enter product name")
-        for i in range(len(addproduct)):
-            if p==addproduct[i]:
-                addproduct.pop(i)
-                addqty.pop(i)
-                addrate.pop(i)
-                break
+    while True:
+        rm=input(" product  remove 'yes'")
+        if rm =='yes':
+            p=input("enter product name")
+            for i in range(len(addproduct)):
+                if p==addproduct[i]:
+                    addproduct.pop(i)
+                    addqty.pop(i)
+                    addrate.pop(i)
+                    break
+        else:
+            break
+ 
     for i in range(len(addproduct)):
         print(addproduct[i],end="\t")
         print(addqty[i],end="\t")
