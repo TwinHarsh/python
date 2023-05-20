@@ -51,6 +51,8 @@ if(log):
                     addqty.append(q)
                     addrate.append(rate[p_pos])
 
+                    qty[p_pos]=qty[p_pos]-q
+
                 else:
                     print("limit reached") 
         else:
@@ -91,7 +93,7 @@ if(log):
                         find=True
                         break
                 if find:
-                    qt= int(input("enter qty"))
+                    qt= int(input("enter qty within limit"))
                     if(qt<=qty[pos]):
                         addqty[pos]=qt
         else:
