@@ -42,3 +42,30 @@ if x in data and y in data[x]:
 else:
     print("invalid user or pass")'''
 
+'''def login(userlist,passlist):
+    #print(userlist)
+    #print(passlist)
+    try:
+        name=input("enter name")
+        p=int(input("enter password"))
+
+        for i in range(len(userlist)):
+            if(name==userlist[i]and p==passlist[i]):
+                return True
+    except:
+        print("")
+    return False
+
+user=["user1","admin"]
+pass1=[12345,1111]
+count=0
+while True:
+    if(login(user,pass1)):
+        print("login") 
+
+    else:
+        print("not login")   
+        count=count+1
+        if(count>=3):
+            break'''
+
